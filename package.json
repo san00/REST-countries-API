@@ -1,0 +1,24 @@
+{
+  "name": "gulp-boilerplate",
+  "version": "2.0.0",
+  "description": "new project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "san00",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-uglify-es": "^1.0.4"
+  }
+}
