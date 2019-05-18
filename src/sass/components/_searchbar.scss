@@ -1,0 +1,14 @@
+.controls{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+    
+.searchbar{
+    display: flex;
+    padding: $spacing-xl; 
+}
+
+.searchbar__input{
+    width: 30em; 
+}
