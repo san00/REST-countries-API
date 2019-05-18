@@ -10,7 +10,23 @@
 </head>
 
 <body>
-  <h1>hello!</h1>
+  <header class="header">
+    <p class="header__logo">Countries of the world</p>
+    <button class="header__button">toggle theme</button>
+  </header>
+  <div class="controls">
+    <form class="searchbar">
+      <label for="searchbar"></label>
+      <input class="searchbar__input" type="search" placeholder="search for a country">
+      <input class="searchbar__button" type="button" value="search countries">
+    </form>
+    <form class="filterlist">
+      <label for="filterlist"></label>
+      <input class="filterlist__button" type="button" value="filter by region">
+    </form>
+  </div>
+  <section class="content">
+  </section>
 </body>
 <script src="js/main.js"></script>
 
