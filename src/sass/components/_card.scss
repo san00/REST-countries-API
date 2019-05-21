@@ -1,0 +1,22 @@
+.card{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.card__container{
+    margin-left: $spacing-l;
+    margin-right: $spacing-l;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: $spacing-m;
+    margin-bottom: $spacing-xl;
+}
+.card__img{
+    width: 15em;
+    height: 10em;
+    margin-bottom: $spacing-m;
+}
+.card__name{
+    padding-bottom: $spacing-xs;
+}
