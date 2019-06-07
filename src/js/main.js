@@ -1,8 +1,5 @@
 const url = "https://restcountries.eu/rest/v2/all";
 const countries = [];
-let searchedCountry;
-const input = document.querySelector(".searchbar__input");
-input.addEventListener("keyup", updateSearchedCountry);
 
 fetch(url)
   .then(response => {
@@ -10,37 +7,39 @@ fetch(url)
   })
   .then(data => {
     countries.push(...data);
-    // console.log(countries);
-    return countries;
-  })
-  .then(countries => {
-    console.log(searchedCountry);
-    return matchCountry(searchedCountry, countries);
-  })
-  .then(matchedCountry => {
-    return displayCountries(matchedCountry);
-  })
-  .catch(error => console.error(error));
+    displayCountries([]);
+  }).catch(error => console.error(error));
 
+//Filter & match country based on searchbar input.
+//Creates a new array with the filtered results.
 
-function updateSearchedCountry() {
-    //updates search box value
-  searchedCountry = input.value;
-  return searchedCountry;
-}
-
-function matchCountry(searchedCountry, countries) {
-  const matchedCountry = countries.filter(place => {
+function matchCountry() {
+  let userInput = input.value;
+  matchedCountry = countries.filter(place => {
     //check if search term matches any countries
-    const regex = new RegExp(searchedCountry, "gi"); //global match, ignore case
-    return place.name.match(regex) && place.flag.match(regex);
+    const regex = new RegExp(userInput, "gi"); //global match, ignore case
+    return place.name.match(regex) || place.capital.match(regex);
   });
-  return matchedCountry;
+  //pass filtered results to displayCountry
+  displayCountries(matchedCountry);
 }
 
-function displayCountries(matchedCountry) {
+//Display all countries using countries array
+
+function displayCountries(results) {
   const card = document.querySelector(".card");
-  matchedCountry.forEach(country => {
+  //if user searches for a country, 
+  //return the matched result and update DOM to show that country, 
+  //else display all countries.
+  let value = [];
+  //check whether to display all countries
+  if (results.length < 1) {
+    value = countries;
+  } else {
+    value = results;
+  }
+
+  value.forEach(country => {
     //create container for each country
     let div = document.createElement("div");
     div.setAttribute("class", "card__container");
@@ -58,5 +57,16 @@ function displayCountries(matchedCountry) {
     countryName.append(country.name);
     div.append(countryName);
     card.append(div);
+
+    let capital = document.createElement("h3");
+    capital.setAttribute("class", "card__desc");
+    capital.append(country.capital);
+    div.append(capital);
+    card.append(div);
   });
+
 }
+
+const input = document.querySelector(".searchbar__input");
+input.addEventListener("keydown", matchCountry);
+input.addEventListener("change", matchCountry);
