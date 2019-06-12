@@ -1,5 +1,6 @@
 const url = "https://restcountries.eu/rest/v2/all";
 const countries = [];
+const input = document.querySelector(".searchbar__input");
 
 fetch(url)
   .then(response => {
@@ -18,16 +19,21 @@ function matchCountry() {
   matchedCountry = countries.filter(place => {
     //check if search term matches any countries
     const regex = new RegExp(userInput, "gi"); //global match, ignore case
-    return place.name.match(regex) || place.capital.match(regex);
+    return place.name.match(regex);
   });
   //pass filtered results to displayCountry
   displayCountries(matchedCountry);
+
 }
 
 //Display all countries using countries array
 
 function displayCountries(results) {
   const card = document.querySelector(".card");
+
+  //clears the display of all flags & appends the matched country.
+  card.innerHTML = " ";
+
   //if user searches for a country, 
   //return the matched result and update DOM to show that country, 
   //else display all countries.
@@ -58,7 +64,7 @@ function displayCountries(results) {
     div.append(countryName);
     card.append(div);
 
-    let capital = document.createElement("h3");
+    let capital = document.createElement("p");
     capital.setAttribute("class", "card__desc");
     capital.append(country.capital);
     div.append(capital);
@@ -67,6 +73,13 @@ function displayCountries(results) {
 
 }
 
-const input = document.querySelector(".searchbar__input");
 input.addEventListener("keydown", matchCountry);
 input.addEventListener("change", matchCountry);
+
+
+
+
+
+
+
+
