@@ -60,15 +60,18 @@ function displayCountries(results) {
     //append name
     let countryName = document.createElement("h3");
     countryName.setAttribute("class", "card__name");
-    countryName.append(country.name);
     div.append(countryName);
-    card.append(div);
 
     let capital = document.createElement("p");
     capital.setAttribute("class", "card__desc");
     capital.append(country.capital);
     div.append(capital);
     card.append(div);
+    
+    let detaillink = document.createElement("a");
+    detaillink.setAttribute("href", "detail.html?name="+country.name);
+    detaillink.append(country.name);
+    countryName.append(detaillink);
   });
 
 }
