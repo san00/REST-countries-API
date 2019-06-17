@@ -8,6 +8,12 @@ $spacing-l: calc(#{$base-space} * 2); // 32px spacing
 $spacing-xl: calc(#{$base-space} * 4); // 64px spacing
 $spacing-xxl: calc(#{$base-space} * 8); // 128px spacing
 
+// project colours 
+$background-colour: hsl(0, 0%, 96%);
+$foreground-colour: hsl(0, 0%, 100%);
+$primary-text-colour: #262626;
+$secondary-text-colour: #3f3f3f;
+
 // Type/font scale
 $text-base: 1em;
 $text-scale: 1.2;
