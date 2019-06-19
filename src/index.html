@@ -18,12 +18,18 @@
   <div class="controls">
     <form class="searchbar">
       <input class="searchbar__input" type="text" placeholder="search for a country">
-      <input class="searchbar__button" type="button" value="search countries">
     </form>
-    <form class="filterlist">
-      <label for="filterlist"></label>
-      <input class="filterlist__button" type="button" value="filter by region">
-    </form>
+    <nav class="filterlist">
+      <ul class="filterlist__container">
+        <li class="filterlist__menu"> Filter region
+          <button data-country="africa" type="button" class="filterlist__menu-item">Africa</button>
+          <button data-country="america" type="button" class="filterlist__menu-item">Americas & the Carribean</button>
+          <button data-country="asia" class="filterlist__menu-item">Asia</button>
+          <button data-country="europe" class="filterlist__menu-item">Europe</button>
+          <button data-country="oceania" class="filterlist__menu-item">Oceania</button>
+        </li>
+      </ul>
+    </nav>
   </div>
   <section class="card">
   </section>
