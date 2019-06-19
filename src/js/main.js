@@ -1,6 +1,7 @@
 const url = "https://restcountries.eu/rest/v2/all";
 const countries = [];
 const input = document.querySelector(".searchbar__input");
+const countryRegion = document.querySelectorAll("[data-country]");
 
 fetch(url)
   .then(response => {
@@ -23,12 +24,20 @@ function matchCountry() {
   });
   //pass filtered results to displayCountry
   displayCountries(matchedCountry);
+}
 
+function filterByRegion() {
+  const worldRegion = this.dataset.country;
+  regionArray = countries.filter(country => {
+    const regex = new RegExp(worldRegion, "gi");
+    return country.region.match(regex);
+  });
+  displayCountries(regionArray);
 }
 
 //Display all countries using countries array
 
-function displayCountries(results) {
+function displayCountries(results, regionW) {
   const card = document.querySelector(".card");
 
   //clears the display of all flags & appends the matched country.
@@ -41,8 +50,11 @@ function displayCountries(results) {
   //check whether to display all countries
   if (results.length < 1) {
     value = countries;
-  } else {
+  } else if (results.length > 1) {
     value = results;
+  }
+  else {
+    value = regionW;
   }
 
   value.forEach(country => {
@@ -67,9 +79,9 @@ function displayCountries(results) {
     capital.append(country.capital);
     div.append(capital);
     card.append(div);
-    
+
     let detaillink = document.createElement("a");
-    detaillink.setAttribute("href", "detail.html?name="+country.name);
+    detaillink.setAttribute("href", "detail.html?name=" + country.name);
     detaillink.append(country.name);
     countryName.append(detaillink);
   });
@@ -78,11 +90,4 @@ function displayCountries(results) {
 
 input.addEventListener("keydown", matchCountry);
 input.addEventListener("change", matchCountry);
-
-
-
-
-
-
-
-
+countryRegion.forEach(button => button.addEventListener("click", filterByRegion));
