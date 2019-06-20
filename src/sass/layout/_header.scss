@@ -2,5 +2,13 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: $spacing-xl;
+    padding: $spacing-l;
+    background-color: $foreground-colour;
+    margin-bottom: $spacing-xl;
+}
+
+.header__logo{
+    font-size: $h6;
+    color: $primary-text-colour;
+    font-family: 'Roboto', sans-serif;
 }

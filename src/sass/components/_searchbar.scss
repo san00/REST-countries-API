@@ -2,6 +2,16 @@
     display: flex;
     flex-flow: wrap;
     justify-content: space-around;
-    margin-bottom: $spacing-xl;
+    margin-bottom: $spacing-xl; 
 }
-    
+
+.searchbar__input{
+    height: 3em;
+    width: 30vw;
+    font-size:$body-small;   
+    padding:$spacing-s; 
+    cursor: pointer;
+}
+.searchbar__input:hover{
+    box-shadow: 0 0 0.175em 0 hsla(0, 0%, 0%, 0.2);
+}
