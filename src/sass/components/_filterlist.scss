@@ -1,3 +1,31 @@
-.filterlist{
-    padding: $spacing-l; 
+.filterlist__container{
+    display: flex;
+    position: relative;
+}
+
+.filterlist__menu{
+   display: flex;
+   flex-direction: column;  
+   background: $foreground-colour;
+   position: relative;
+   text-align: center;
+   padding: $spacing-s;
+   color: $primary-text-colour;
+}
+
+.filterlist__menu-item{
+   display: flex;
+   flex-direction: column;  
+   border: none;
+   padding: $spacing-s;
+   cursor: pointer;
+   font-size: $body-small;
+   margin: $spacing-xs;
+   border-bottom-left-radius: 0.2em;
+   border-bottom-right-radius:0.2em;
+   box-shadow: 0 0.125em 0.275em 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.filterlist__menu-item:hover{
+   box-shadow: 0.115em 0.275em 1.15em hsla(0, 0, 0, 0.2); 
 }
