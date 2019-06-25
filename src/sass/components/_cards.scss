@@ -1,0 +1,70 @@
+.cards{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.cards__container{
+    margin-left: $spacing-l;
+    margin-right: $spacing-l;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: $spacing-m;
+    margin-bottom: $spacing-xl;
+    border-radius: 0.2em;
+    cursor: pointer;
+    box-shadow: 0 0.125em 0.375em 0 hsla(0, 0%, 0%, 0.2);
+    background-color: $foreground-colour;
+}
+
+.cards__img{
+    height: 10em;
+    margin-bottom: $spacing-m;
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); 
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 0.1em;
+    border-top-right-radius: 0.1em;
+}
+
+.cards__name{
+    padding-bottom: $spacing-m;
+    font-weight: 700;
+    font-size: $h6;
+    color: $primary-text-colour;
+}
+
+.cards__desc{
+    font-weight: 300;
+    font-size: $body-text;
+    color: $secondary-text-colour;
+}
+
+.cards__desc, .cards__name{
+    margin-left: $spacing-m;
+    margin-right: $spacing-m;
+    text-align: left;
+}
+
+.cards__container:hover { 
+    box-shadow: 0.125em 0.375em 1.85em hsla(0, 0, 0, 0.2); 
+}
+
+//sources of reference
+//jen simmons slanting images https://www.youtube.com/watch?v=3kncTIpc4Q4
+//https://inclusive-components.design/cards/
+//https://www.smashingmagazine.com/2015/05/creating-responsive-shapes-with-clip-path/
+//https://www.viget.com/articles/angled-edges-with-css-masks-and-transforms/
+//https://css-tricks.com/almanac/selectors/a/after-and-before/
+//https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML
+
+//why? thinking about how to make cards accessible and creating affordance through design.002em
+// by making the cards easy to understand for visually and keyboard users etc.002em
+//will need to deceide on styling, colours, font etc 
+
+//want to tab through cards using only keyboard? how? 
+//implement focus, currently not working.
+//add grid enhamcement
+//setting up card elements for other page, without duplicating components, eg adjusting size of img
+// when on detail page etc - will this be handled in the js display function?
+//setting text size as variables.
