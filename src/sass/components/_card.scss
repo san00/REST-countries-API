@@ -1,0 +1,38 @@
+.card{
+    display: flex;
+    justify-content: center;
+}
+
+.card__container{
+    margin-left: $spacing-l;
+    margin-right: $spacing-l;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.125em 0.375em 0 hsla(0, 0%, 0%, 0.2);
+    background-color: $foreground-colour;
+}
+
+.card__flag{
+    margin-bottom: $spacing-l;
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); 
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 0.1em;
+    border-top-right-radius: 0.1em;
+}
+
+.card__name{
+    margin-bottom: $spacing-m;
+    padding-left: $spacing-l;
+    color: $primary-text-colour;
+}
+
+.card__capital, .card__native-name, .card__population{
+    padding-bottom: $spacing-xs;
+    padding-left: $spacing-l;
+    color: $secondary-text-colour
+}
+
+.card__population{
+    margin-bottom: $spacing-m;
+}
