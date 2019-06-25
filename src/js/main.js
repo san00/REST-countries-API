@@ -38,7 +38,7 @@ function filterByRegion() {
 //Display all countries using countries array
 
 function displayCountries(results, regionW) {
-  const card = document.querySelector(".card");
+  const card = document.querySelector(".cards");
 
   //clears the display of all flags & appends the matched country.
   card.innerHTML = " ";
@@ -50,7 +50,7 @@ function displayCountries(results, regionW) {
   //check whether to display all countries
   if (results.length < 1) {
     value = countries;
-  } else if (results.length > 1) {
+  } else if (results.length >= 1) {
     value = results;
   }
   else {
@@ -60,22 +60,22 @@ function displayCountries(results, regionW) {
   value.forEach(country => {
     //create container for each country
     let div = document.createElement("div");
-    div.setAttribute("class", "card__container");
+    div.setAttribute("class", "cards__container");
 
     //append flag
     let img = document.createElement("img");
-    img.setAttribute("class", "card__img");
+    img.setAttribute("class", "cards__img");
     img.src = country.flag;
     div.append(img);
     card.append(div);
 
     //append name
     let countryName = document.createElement("h3");
-    countryName.setAttribute("class", "card__name");
+    countryName.setAttribute("class", "cards__name");
     div.append(countryName);
 
     let capital = document.createElement("p");
-    capital.setAttribute("class", "card__desc");
+    capital.setAttribute("class", "cards__desc");
     capital.append(country.capital);
     div.append(capital);
     card.append(div);
