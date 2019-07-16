@@ -1,6 +1,7 @@
 .card{
     display: flex;
     justify-content: center;
+    margin-bottom:  $spacing-xl;
 }
 
 .card__container{
@@ -23,16 +24,58 @@
 
 .card__name{
     margin-bottom: $spacing-m;
-    padding-left: $spacing-l;
+    margin-left: $spacing-l;
     color: $primary-text-colour;
 }
 
-.card__capital, .card__native-name, .card__population{
-    padding-bottom: $spacing-xs;
-    padding-left: $spacing-l;
-    color: $secondary-text-colour
+.card__story{
+  margin-bottom: $spacing-l;
+  font-weight: 200;
 }
 
-.card__population{
-    margin-bottom: $spacing-m;
+.card__border-country-heading{
+  margin-bottom: $spacing-s;
+  font-weight:700;
 }
+
+.card__border-country-heading, .card__story{
+    padding-bottom: $spacing-xs;
+    margin-left: $spacing-l;
+    margin-right: $spacing-xl;
+    color: $secondary-text-colour;
+    padding:$spacing-s;
+}
+
+.card__container-inner{
+  display: flex;
+  justify-content: start;
+  flex-flow: wrap;
+  padding-left: $spacing-m;
+  padding-right: $spacing-m;
+  }
+  
+  .card__border-countries{
+    display: flex;
+    padding-left: $spacing-xs;
+    margin-bottom: $spacing-m;
+    margin-left: $spacing-s;
+    margin-right: $spacing-s;
+    box-shadow: 0 0.125em 0.375em 0 hsla(0, 0%, 0%, 0.2);
+  }
+
+  .card__border-countries:hover { 
+    box-shadow: 0.125em 0.375em 1.85em hsla(0, 0, 0, 0.2); 
+  }
+
+  .borderlink{
+    color:$primary-text-colour;
+    text-decoration: none;
+    padding: $spacing-s;
+    font-weight: 200;
+ }
+ 
+  .borderlink:hover{
+      color: $hover-text-colour;
+  }
+
+  
