@@ -50,21 +50,19 @@
     box-shadow: 0.125em 0.375em 1.85em hsla(0, 0, 0, 0.2); 
 }
 
-//sources of reference
-//jen simmons slanting images https://www.youtube.com/watch?v=3kncTIpc4Q4
-//https://inclusive-components.design/cards/
-//https://www.smashingmagazine.com/2015/05/creating-responsive-shapes-with-clip-path/
-//https://www.viget.com/articles/angled-edges-with-css-masks-and-transforms/
-//https://css-tricks.com/almanac/selectors/a/after-and-before/
-//https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML
+.card__link-to-detail-page{
+    color: $primary-text-colour;
+    text-decoration: none;
+    display:flex;
+    background-color:$background-colour;
+    padding-top: $spacing-l;
+    padding-left: $spacing-l;
+    padding-right: $spacing-l;
+    padding-bottom:  $spacing-m;
+    border-radius: 0.2em;
+}
 
-//why? thinking about how to make cards accessible and creating affordance through design.002em
-// by making the cards easy to understand for visually and keyboard users etc.002em
-//will need to deceide on styling, colours, font etc 
-
-//want to tab through cards using only keyboard? how? 
-//implement focus, currently not working.
-//add grid enhamcement
-//setting up card elements for other page, without duplicating components, eg adjusting size of img
-// when on detail page etc - will this be handled in the js display function?
-//setting text size as variables.
+.card__link-to-detail-page:hover{
+    box-shadow: 0.105em 0.275em 1.85em hsla(0, 0, 0, 0.2); 
+    color: $hover-text-colour;
+}

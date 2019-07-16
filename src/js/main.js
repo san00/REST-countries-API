@@ -9,45 +9,36 @@ fetch(url)
   })
   .then(data => {
     countries.push(...data);
-    displayCountries([]);
+    displayAllCountries([]);
   }).catch(error => console.error(error));
 
-//Filter & match country based on searchbar input.
-//Creates a new array with the filtered results.
+//Filter & match countries
 
 function matchCountry() {
   let userInput = input.value;
   matchedCountry = countries.filter(place => {
-    //check if search term matches any countries
-    const regex = new RegExp(userInput, "gi"); //global match, ignore case
+    const regex = new RegExp(userInput, "gi");
     return place.name.match(regex);
   });
-  //pass filtered results to displayCountry
-  displayCountries(matchedCountry);
+  displayAllCountries(matchedCountry);
 }
 
-function filterByRegion() {
+function filterCountriesByRegion() {
   const worldRegion = this.dataset.country;
   regionArray = countries.filter(country => {
     const regex = new RegExp(worldRegion, "gi");
     return country.region.match(regex);
   });
-  displayCountries(regionArray);
+  displayAllCountries(regionArray);
 }
 
-//Display all countries using countries array
 
-function displayCountries(results, regionW) {
+function displayAllCountries(results, regionW) {
   const card = document.querySelector(".cards");
-
-  //clears the display of all flags & appends the matched country.
   card.innerHTML = " ";
 
-  //if user searches for a country, 
-  //return the matched result and update DOM to show that country, 
-  //else display all countries.
   let value = [];
-  //check whether to display all countries
+
   if (results.length < 1) {
     value = countries;
   } else if (results.length >= 1) {
@@ -55,12 +46,13 @@ function displayCountries(results, regionW) {
   }
   else {
     value = regionW;
-  }
+  };
 
   value.forEach(country => {
     //create container for each country
     let div = document.createElement("div");
     div.setAttribute("class", "cards__container");
+    div.setAttribute("href", "detail.html?name=" + country.name);
 
     //append flag
     let img = document.createElement("img");
@@ -76,12 +68,20 @@ function displayCountries(results, regionW) {
 
     let capital = document.createElement("p");
     capital.setAttribute("class", "cards__desc");
-    capital.append(country.capital);
+    capital.append(`Capital: ${country.capital}`);
     div.append(capital);
     card.append(div);
 
+    let region = document.createElement("p");
+    region.setAttribute("class", "cards__desc");
+    region.append(`Region: ${country.region}`);
+    div.append(region);
+    card.append(div);
+
+
     let detaillink = document.createElement("a");
     detaillink.setAttribute("href", "detail.html?name=" + country.name);
+    detaillink.setAttribute("class", "card__link-to-detail-page");
     detaillink.append(country.name);
     countryName.append(detaillink);
   });
@@ -90,4 +90,4 @@ function displayCountries(results, regionW) {
 
 input.addEventListener("keydown", matchCountry);
 input.addEventListener("change", matchCountry);
-countryRegion.forEach(button => button.addEventListener("click", filterByRegion));
+countryRegion.forEach(button => button.addEventListener("click", filterCountriesByRegion));
