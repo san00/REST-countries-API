@@ -1,6 +1,7 @@
-# Countries of the World app with colour theme switcher
+# Countries of the World app
+App designed & built from scratch to search and view detailed information about countries of the world. 
 
-![desktop-preview](https://user-images.githubusercontent.com/14879253/57810834-a9bfdd00-7760-11e9-8017-ea02c1fe8424.jpg)
+![Screen Shot 2020-03-16 at 21 01 40](https://user-images.githubusercontent.com/14879253/76799418-617eaa80-67c9-11ea-8e19-980078ee44aa.png)
 
 Build an app similar to this challenge on [frontendmentor](https://beta.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
 
@@ -14,7 +15,7 @@ Build an app similar to this challenge on [frontendmentor](https://beta.frontend
  * Click through to the border countries on the detail page
  * Toggle the color scheme between light and dark mode (optional)
 
-## Built from scratch with
+## Technologies
 * Gulp
 * Sass
 * HTML5 
